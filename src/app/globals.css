@@ -42,6 +42,19 @@ body {
   pointer-events: none;
 }
 
+/* Capa base de glow: garantiza color ambiental en TODO el viewport
+   (independiente de dónde estén los blobs), clave para que en mobile no se
+   sienta negro fuera del hero. Fija → acompaña el scroll. */
+.ambient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70vw 55vh at 50% 0%, rgba(208, 169, 51, 0.12), transparent 60%),
+    radial-gradient(60vw 45vh at 85% 55%, rgba(208, 169, 51, 0.08), transparent 62%),
+    radial-gradient(60vw 45vh at 10% 90%, rgba(208, 169, 51, 0.07), transparent 62%);
+}
+
 .ambient__blob {
   position: absolute;
   border-radius: 9999px;
@@ -109,9 +122,40 @@ body {
   inset: 0;
   background: radial-gradient(
     ellipse at 50% 40%,
-    transparent 42%,
-    rgba(0, 0, 0, 0.55) 100%
+    transparent 55%,
+    rgba(0, 0, 0, 0.38) 100%
   );
+}
+
+/* En mobile el contenido ocupa todo el ancho: agrandamos y centramos los
+   glows para que no queden solo en los bordes, y suavizamos aún más la
+   vignette. */
+@media (max-width: 768px) {
+  .ambient__blob--1 {
+    width: 95vw;
+    height: 95vw;
+    top: -4vh;
+    left: -14vw;
+  }
+  .ambient__blob--2 {
+    width: 90vw;
+    height: 90vw;
+    top: 42vh;
+    right: -28vw;
+  }
+  .ambient__blob--3 {
+    width: 88vw;
+    height: 88vw;
+    bottom: -6vh;
+    left: -22vw;
+  }
+  .ambient__vignette {
+    background: radial-gradient(
+      ellipse at 50% 45%,
+      transparent 62%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
 }
 
 /* Micro-parallax del hero: scroll-driven, SIN listener JS.

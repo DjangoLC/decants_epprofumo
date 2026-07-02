@@ -32,6 +32,9 @@ export const metadata = {
     siteName: 'EP PROFUMO',
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: '3wnmPpfe1Zua65YojhDJH_uqXpKBQIPuxQ-3AakoDSI',
+  },
 };
 
 export const viewport = {

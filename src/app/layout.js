@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://epprofumo.com'),
+  metadataBase: new URL('https://decants.epprofumo.com'),
   title: 'Decants de Perfumes Árabes desde $104 | EP PROFUMO',
   description:
     'Prueba las fragancias árabes más buscadas en decants desde $104 MXN antes de invertir en el frasco completo. 169 fragancias 100% originales, envíos a todo México. Descubre antes de comprar.',

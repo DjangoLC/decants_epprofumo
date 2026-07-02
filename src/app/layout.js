@@ -2,6 +2,7 @@ import { Anton, Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import { GTM_ID } from '@/lib/constants';
 import Attribution from '@/components/Attribution';
+import AmbientBackground from '@/components/AmbientBackground';
 import './globals.css';
 
 const anton = Anton({
@@ -78,6 +79,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
         {/* Captura de gclid → sessionStorage → atribución (fire-and-forget). */}
         <Attribution />
+
+        {/* Fondo ambiental decorativo (detrás del contenido). */}
+        <AmbientBackground />
 
         {children}
       </body>

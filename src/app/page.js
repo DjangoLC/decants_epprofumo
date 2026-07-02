@@ -104,9 +104,11 @@ function Stars() {
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-5xl px-5 sm:px-6">
+    <main className="relative z-10 mx-auto w-full max-w-5xl px-5 sm:px-6">
       {/* ═══ Bloque 1 — Hero ═══ */}
-      <section className="flex flex-col items-center gap-8 pb-16 pt-14 text-center sm:pt-20">
+      <section className="relative isolate flex flex-col items-center gap-8 pb-16 pt-14 text-center sm:pt-20">
+        {/* Glow del hero con micro-parallax scroll-driven (degrada a estático) */}
+        <div className="hero-glow" aria-hidden="true" />
         <div className="flex flex-col items-center gap-5">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#d0a933]">
             EP PROFUMO
